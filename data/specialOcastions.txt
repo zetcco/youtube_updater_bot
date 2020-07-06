@@ -1,0 +1,9 @@
+special ocasions
+
+1. identification method: style="style-scope ytcp-video-list-cell-video remove-default-style no-link"
+
+	Processing abandoned
+	The video is too long. Learn more about how to enable long videos on your channel
+
+2. identification method: 	style="style-scope ytcp-video-list-cell-video" (Normal Video after editing)
+							stlye="style-scope ytcp-video-list-cell-video draft-thumbnail" (Draft video before editing)

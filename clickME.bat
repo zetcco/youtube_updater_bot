@@ -1,0 +1,1 @@
+"%localappdata%\Programs\Python\Python37-32\python.exe" data\ytidman.py 1> logs\cmdOutput.log 2> logs\cmdOutput2.log
