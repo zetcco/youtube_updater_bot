@@ -173,7 +173,7 @@ def updateDetails(title, description, tags):
 
 	attempts = 0
 	while True:
-		print("Attempts: " + attempts)
+		print("Attempts: " + str(attempts))
 		if (inputIDs[0].text[0:2] == "B0") and (attempts <= 3):
 			print("Title not updated")
 			actions = ActionChains(driver)
@@ -219,15 +219,22 @@ def getNewDetails(productID):
 		title = title[:90]
 		description_main = lines[2:lines.index('***** Technical Details *****\n')-2]
 		description_additional = lines[lines.index('***** Additional Details *****\n')+2 : lines.index('***** Extra Details *****\n')-2]
-		description = description_main + description_additional
+		description_similar_products = lines[lines.index('***** Similar Products *****\n')+2 : lines.index('***** Tags *****\n')-2]
+		description_extra = lines[lines.index('***** Extra Details *****\n')+2 : lines.index('***** Similar Products *****\n')-2]
+		description = description_main + description_additional + description_similar_products
+
+		# UNKNOWN CODE HERE 
+
 		# description = lines[2:-2]
-		lastLine = -1
-		for line in reversed(description):
-			if line[0] == "\n":
-				lastLine -= 1
-			else:
-				break
-		description = description[:lastLine]
+		# lastLine = -1
+		# for line in reversed(description):
+		# 	if line[0] == "\n":
+		# 		lastLine -= 1
+		# 	else:
+		# 		break
+		# description = description[:lastLine]
+
+		
 		finalDescription = ""
 		for line in description:
 			finalDescription += line
@@ -245,6 +252,7 @@ def getNewDetails(productID):
 
 def updateEXIF(filename, tags, title):
 	try:
+		tags = ",".join(tags)
 		tags = tags.replace(",",";")
 
 		im = Image.open(filename)
@@ -392,6 +400,8 @@ def mainRunTime():
 							print("Attempting to edit the video")
 							editVideo(productID, title, description, tags)
 							print("Editing completed on  the video")
+
+							time.sleep(5)
 
 							print("Attempting to save the video")
 							saveChanges(productID)
