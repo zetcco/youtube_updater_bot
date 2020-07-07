@@ -4,7 +4,7 @@ This updates the details (Described below) of uploaded videos on a Youtube chann
 
 DISCLAIMER : THIS WORKS ONLY ON NEW YOUTUBE STUDIO
 
-Updating details: Video Title
+Updating details: Video Title\n
                   Video Description
                   Tags
                   Age restriction option
